@@ -1,0 +1,18 @@
+- name: Deploy to EC2
+  hosts: localhost
+  connection: local
+  
+  tasks:
+    - name: Launch EC2 instance
+      ec2:
+       instance_type: t2.micro
+       image: ami-013f17f36f8b1fefb
+       region: us-east-1
+       key_name: devops
+       vpc_subnet_id: subnet-701b6e2f
+       assign_public_ip: yes
+       wait: yes
+       count: 2
+       aws_access_key: "ASIAYKFY54BA2KXTFCFA"
+       aws_secret_key: "hDnl/N4xdOOuFh00RrMC7KtD3WJjlbkEprC/EbiR"
+       security_token: "IQoJb3JpZ2luX2VjEIH//////////wEaCXVzLXdlc3QtMiJHMEUCIARZCr/lgSTRs6vwzFw6VEydlnpeOx+hpAv65dmLhxlJAiEAlIzpkbjq6bUosf7w8IvRHw+toRTh5mj9BRks1HYnu68qtgII2v//////////ARAAGgw1NzE2MTg0ODQyODkiDD+kcZw+IhbIcFmVkyqKAuLiE8teBGhuMiwG5pl0L4TewE7Jzi0IDBxXSH98g+gAqrLO7NcgvgQfsRIuzEjxWT76GYxHH02w3yc6SJlNsqESIyJPWCN9e7gqTVc8UKq+XziCXOWbeGPD+au82if6cifJ9xUo+zrz8soXCke7Ujz01LidpGuhL6NF0Rtmfxc/LkkrESmWZlU7Yx9cInO/Oyx0CjloijRMdEnZ/jkX36sVJGAsaaqBeEOkQcPkC3UBhbbWa+S1CJHFyCxqkjwMmdTiJgD51cNeh8i6mkBELOHYwge1sjBdoqUhg6GFP36x0pUjbITNp5j6DuJENrRGn2ym4Utg53hFNhqilhjNrse8m6eVdYjxm0b/MI+k14MGOp0BJd6kC9MYIRP5Yl/kBWc4jlpSOixwIgstpyv45/DAcqw9p7NkYyDCJwfQMFk+rmCDFyDFFwVrtUzRJqp6mZ8EKcScwfhzD3uvTiENGRiyqU60aEN4DGsNNfiR7gCspvB/t8czAEmGEa2d3qZqf9ye7JdtcRDd8wfA6z9VpqKzW9tk522f2tguhOk54+ExbmHdBIveRw1NE1yeeki1dw=="
